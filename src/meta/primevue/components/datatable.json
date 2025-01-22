@@ -462,6 +462,14 @@
             "description": "The breakpoint to define the maximum width boundary when using stack responsive layout."
         },
         {
+            "name": "showHeaders",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "true",
+            "description": "Whether to display table headers"
+        },
+        {
             "name": "showGridlines",
             "optional": true,
             "readonly": false,
@@ -489,7 +497,7 @@
             "name": "size",
             "optional": true,
             "readonly": false,
-            "type": "\"large\" | \"small\"",
+            "type": "\"small\" | \"large\"",
             "default": "",
             "description": "Defines the size of the table."
         },
@@ -588,18 +596,6 @@
             "description": "Custom footer template."
         },
         {
-            "name": "paginatorstart",
-            "parameters": [],
-            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Custom paginator start template."
-        },
-        {
-            "name": "paginatorend",
-            "parameters": [],
-            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Custom paginator end template."
-        },
-        {
             "name": "empty",
             "parameters": [],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
@@ -694,6 +690,24 @@
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom rowgroup toggler icon template."
+        },
+        {
+            "name": "paginatorcontainer",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom paginator container template."
+        },
+        {
+            "name": "paginatorstart",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom paginator start template."
+        },
+        {
+            "name": "paginatorend",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom paginator end template."
         },
         {
             "name": "paginatorfirstpagelinkicon",

@@ -9,6 +9,22 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "Nullable<number>",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "format",
             "optional": true,
             "readonly": false,
@@ -211,6 +227,14 @@
             "description": "Highlights automatically the input value."
         },
         {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
+        },
+        {
             "name": "invalid",
             "optional": true,
             "readonly": false,
@@ -297,6 +321,14 @@
             "type": "string",
             "default": "",
             "description": "Establishes a string value that labels the component."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -398,6 +430,19 @@
             "description": "Emitted when the value changes."
         },
         {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "number",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
+        },
+        {
             "name": "input",
             "parameters": [
                 {
@@ -437,5 +482,5 @@
             "description": "Callback to invoke on blur of input field."
         }
     ],
-    "template": "\n<FloatLabel>\n    <InputNumber id=\"number-input\" v-model=\"value\" />\n    <label for=\"number-input\">Number</label>\n</FloatLabel>\n"
+    "template": "\n<InputNumber v-model=\"value1\" inputId=\"currency-us\" mode=\"currency\" currency=\"USD\" locale=\"en-US\" fluid />\n<InputNumber v-model=\"value2\" inputId=\"currency-germany\" mode=\"currency\" currency=\"EUR\" locale=\"de-DE\" />\n<InputNumber v-model=\"value3\" inputId=\"currency-india\" mode=\"currency\" currency=\"INR\" currencyDisplay=\"code\" locale=\"en-IN\" fluid />\n<InputNumber v-model=\"value4\" inputId=\"currency-japan\" mode=\"currency\" currency=\"JPY\" locale=\"jp-JP\" fluid />\n"
 }

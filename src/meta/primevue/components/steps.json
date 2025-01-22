@@ -81,5 +81,5 @@
         }
     ],
     "emits": [],
-    "template": "\n<Steps :model=\"items\" />\n"
+    "template": "<div>not found template</div>"
 }

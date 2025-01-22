@@ -84,5 +84,5 @@
             "description": "Emitted when the value changes."
         }
     ],
-    "template": "\n<Stepper value=\"1\" class=\"basis-[50rem]\">\n    <StepList>\n        <Step value=\"1\">Design</Step>\n        <Step value=\"2\">Development</Step>\n        <Step value=\"3\">QA</Step>\n    </StepList>\n</Stepper>\n"
+    "template": "<div>not found template</div>"
 }

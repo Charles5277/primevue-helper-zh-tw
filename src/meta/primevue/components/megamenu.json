@@ -4,7 +4,7 @@
             "name": "model",
             "optional": true,
             "readonly": false,
-            "type": "MenuItem[]",
+            "type": "MenuItem[][]",
             "default": "",
             "description": "An array of menuitems."
         },
@@ -39,6 +39,14 @@
             "type": "string | number",
             "default": "",
             "description": "Index of the element in tabbing order."
+        },
+        {
+            "name": "scrollHeight",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "20rem",
+            "description": "Height of the viewport, a scrollbar is defined if height of list exceeds this value."
         },
         {
             "name": "ariaLabel",

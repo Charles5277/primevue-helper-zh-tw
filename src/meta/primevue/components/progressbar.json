@@ -12,7 +12,7 @@
             "name": "mode",
             "optional": true,
             "readonly": false,
-            "type": "\"determinate\" | \"indeterminate\"",
+            "type": "\"indeterminate\" | \"determinate\"",
             "default": "determinate",
             "description": "Defines the mode of the progress"
         },

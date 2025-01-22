@@ -176,7 +176,7 @@
     ],
     "emits": [
         {
-            "name": "update:modelValue",
+            "name": "update:visible",
             "parameters": [
                 {
                     "name": "value",
@@ -192,13 +192,31 @@
             "name": "show",
             "parameters": [],
             "returnType": "void",
-            "description": "Callback to invoke when drawer gets shown."
+            "description": "Callback to invoke when drawer is shown."
+        },
+        {
+            "name": "before-hide",
+            "parameters": [],
+            "returnType": "void",
+            "description": "Callback to invoke before drawer gets hidden."
         },
         {
             "name": "hide",
             "parameters": [],
             "returnType": "void",
             "description": "Callback to invoke when drawer gets hidden."
+        },
+        {
+            "name": "after-hide",
+            "parameters": [],
+            "returnType": "void",
+            "description": "Callback to invoke after drawer is hidden."
+        },
+        {
+            "name": "after-show",
+            "parameters": [],
+            "returnType": "void",
+            "description": "Callback to invoke after drawer is shown."
         }
     ],
     "template": "\n<div class=\"card flex justify-center\">\n    <Drawer v-model:visible=\"visible\" header=\"Drawer\">\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n    </Drawer>\n    <Button icon=\"pi pi-arrow-right\" @click=\"visible = true\" />\n</div>\n"

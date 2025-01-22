@@ -310,5 +310,5 @@
             "description": "Callback to invoke when selection changes."
         }
     ],
-    "template": "\n<OrderList v-model=\"products\" dataKey=\"id\" breakpoint=\"575px\" pt:pcList:root=\"w-full sm:w-56\">\n    <template #option=\"{ option }\">\n        {{ option.name }}\n    </template>\n</OrderList>\n"
+    "template": "\n<OrderList v-model=\"products\" dataKey=\"id\" breakpoint=\"575px\" pt:pcListbox:root=\"w-full sm:w-56\">\n    <template #option=\"{ option }\">\n        {{ option.name }}\n    </template>\n</OrderList>\n"
 }

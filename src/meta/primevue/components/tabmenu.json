@@ -108,5 +108,5 @@
             "description": "Callback to invoke when an active tab is changed."
         }
     ],
-    "template": "\n<TabMenu :model=\"items\" />\n"
+    "template": "<div>not found template</div>"
 }

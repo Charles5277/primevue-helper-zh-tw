@@ -88,6 +88,22 @@
             "type": "boolean",
             "default": "false",
             "description": "When enabled, it removes component related styles in the core."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
+        },
+        {
+            "name": "variant",
+            "optional": true,
+            "readonly": false,
+            "type": "\"outlined\" | \"simple\"",
+            "default": "undefined",
+            "description": "Specifies the variant of the component."
         }
     ],
     "slots": [

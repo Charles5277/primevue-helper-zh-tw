@@ -4,7 +4,7 @@
             "name": "value",
             "optional": false,
             "readonly": false,
-            "type": "string",
+            "type": "undefined | string | number",
             "default": "",
             "description": "Unique value of item."
         },
@@ -20,7 +20,7 @@
             "name": "as",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | Component<any, any, any, ComputedOptions, MethodOptions, Object, any>",
             "default": "DIV",
             "description": "Use to change the HTML tag of root element."
         },

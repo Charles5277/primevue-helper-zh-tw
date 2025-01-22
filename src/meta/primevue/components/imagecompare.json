@@ -1,28 +1,28 @@
 {
     "props": [
         {
-            "name": "value",
+            "name": "tabindex",
             "optional": true,
             "readonly": false,
-            "type": "string | number",
-            "default": "",
-            "description": "Value to display inside the badge."
+            "type": "number",
+            "default": "0",
+            "description": "Index of the element in tabbing order."
         },
         {
-            "name": "severity",
+            "name": "ariaLabel",
             "optional": true,
             "readonly": false,
-            "type": "null | HintedString<\"secondary\" | \"info\" | \"success\" | \"warn\" | \"danger\" | \"contrast\">",
+            "type": "string",
             "default": "",
-            "description": "Severity type of the badge."
+            "description": "Defines a string value that labels an interactive element."
         },
         {
-            "name": "size",
+            "name": "ariaLabelledby",
             "optional": true,
             "readonly": false,
-            "type": "null | \"small\" | \"large\" | \"xlarge\"",
+            "type": "string",
             "default": "",
-            "description": "Size of the badge, valid options are 'small', 'large', and 'xlarge'."
+            "description": "Identifier of the underlying input element."
         },
         {
             "name": "dt",
@@ -36,7 +36,7 @@
             "name": "pt",
             "optional": true,
             "readonly": false,
-            "type": "PassThrough<OverlayBadgePassThroughOptions<any>>",
+            "type": "PassThrough<ImageComparePassThroughOptions>",
             "default": "",
             "description": "Used to pass attributes to DOM elements inside the component."
         },
@@ -59,12 +59,18 @@
     ],
     "slots": [
         {
-            "name": "default",
+            "name": "left",
             "parameters": [],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Content can easily be customized with the default slot instead of using the built-in display."
+            "description": "Custom left template."
+        },
+        {
+            "name": "right",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom right template."
         }
     ],
     "emits": [],
-    "template": "<div>not found template</div>"
+    "template": "\n<ImageCompare class=\"shadow-lg rounded-2xl\">\n    <template #left>\n        <img src=\"~/assets/images/island1.jpg\" />\n    </template>\n    <template #right>\n        <img src=\"~/assets/images/island2.jpg\" />\n    </template>\n</ImageCompare>\n"
 }

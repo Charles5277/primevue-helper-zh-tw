@@ -9,6 +9,22 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "options",
             "optional": true,
             "readonly": false,
@@ -71,6 +87,14 @@
             "type": "string",
             "default": "",
             "description": "Label to display when there are no selections."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
         },
         {
             "name": "invalid",
@@ -155,6 +179,30 @@
             "description": "A property to uniquely identify an option."
         },
         {
+            "name": "showClear",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When enabled, a clear icon is displayed to clear the value."
+        },
+        {
+            "name": "clearIcon",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Icon to display in clear button."
+        },
+        {
+            "name": "resetFilterOnClear",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "Clears the filter value when clicking on the clear icon."
+        },
+        {
             "name": "filter",
             "optional": true,
             "readonly": false,
@@ -198,7 +246,7 @@
             "name": "appendTo",
             "optional": true,
             "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
             "default": "body",
             "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached. Special keywords are 'body' for document body and 'self' for the element itself."
         },
@@ -215,7 +263,7 @@
             "optional": true,
             "readonly": false,
             "type": "string",
-            "default": "'{0} items selected'",
+            "default": "null",
             "description": "Label to display after exceeding max selected labels."
         },
         {
@@ -257,14 +305,6 @@
             "type": "string",
             "default": "",
             "description": "Icon to display in the checkboxes."
-        },
-        {
-            "name": "closeIcon",
-            "optional": true,
-            "readonly": false,
-            "type": "string",
-            "default": "",
-            "description": "Icon to display in the dropdown close button."
         },
         {
             "name": "dropdownIcon",
@@ -375,7 +415,7 @@
             "optional": true,
             "readonly": false,
             "type": "string",
-            "default": "'{0} items selected'",
+            "default": "null",
             "description": "Text to be displayed in hidden accessible field when options are selected. Defaults to value from PrimeVue locale configuration."
         },
         {
@@ -425,6 +465,14 @@
             "type": "string",
             "default": "",
             "description": "Identifier of the underlying input element."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -479,7 +527,7 @@
                 {
                     "name": "scope",
                     "optional": false,
-                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// A value in the selection</span>\n }",
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// A value in the selection</span>\n \t <span class=\"ml-3 doc-option-parameter-name\">removeCallback</span>: <span class=\"doc-option-parameter-type\">(<span class=\"doc-option-parameter-name\">event</span>: Event, <span class=\"doc-option-parameter-name\">item</span>: any) &rArr; void</span>, <span class=\"doc-option-parameter-type\">// Chip icon function.</span>\n}",
                     "description": "chip slot's params."
                 }
             ],
@@ -630,25 +678,12 @@
             "description": "Custom filter icon template."
         },
         {
-            "name": "closeicon",
-            "parameters": [
-                {
-                    "name": "scope",
-                    "optional": false,
-                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">class</span>: <span class=\"doc-option-parameter-type\">string</span>, <span class=\"doc-option-parameter-type\">// Style class of the loading icon.</span>\n }",
-                    "description": "closeicon slot's params."
-                }
-            ],
-            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Custom close icon template."
-        },
-        {
             "name": "itemcheckboxicon",
             "parameters": [
                 {
                     "name": "scope",
                     "optional": false,
-                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">selected</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Options of the loader items for virtualscroller</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">class</span>: <span class=\"doc-option-parameter-type\">string</span>, <span class=\"doc-option-parameter-type\">// Style class of the loading icon.</span>\n }",
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">checked</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Whether the data is selected.</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">class</span>: <span class=\"doc-option-parameter-type\">string</span>, <span class=\"doc-option-parameter-type\">// Style class of the loading icon.</span>\n }",
                     "description": "itemcheckboxicon slot's params."
                 }
             ],
@@ -667,6 +702,19 @@
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom loading icon template."
+        },
+        {
+            "name": "clearicon",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n \t <span class=\"ml-3 doc-option-parameter-name\">clearCallback</span>: <span class=\"doc-option-parameter-type\">(<span class=\"doc-option-parameter-name\">event</span>: Event) &rArr; void</span>, <span class=\"doc-option-parameter-type\">// Clear icon click function.</span>\n}",
+                    "description": "clear icon slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom clear icon template."
         },
         {
             "name": "dropdownicon",
@@ -695,6 +743,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "any",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "change",

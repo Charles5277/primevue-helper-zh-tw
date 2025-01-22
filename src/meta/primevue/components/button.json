@@ -44,7 +44,7 @@
             "name": "iconClass",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | object",
             "default": "",
             "description": "Style class of the icon."
         },
@@ -60,7 +60,7 @@
             "name": "badgeClass",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | object",
             "default": "",
             "description": "Style class of the badge."
         },
@@ -92,7 +92,7 @@
             "name": "as",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | Component<any, any, any, ComputedOptions, MethodOptions, Object, any>",
             "default": "BUTTON",
             "description": "Use to change the HTML tag of root element."
         },
@@ -156,9 +156,17 @@
             "name": "size",
             "optional": true,
             "readonly": false,
-            "type": "\"large\" | \"small\"",
+            "type": "\"small\" | \"large\"",
             "default": "",
             "description": "Defines the size of the button."
+        },
+        {
+            "name": "variant",
+            "optional": true,
+            "readonly": false,
+            "type": "\"outlined\" | \"text\" | \"link\"",
+            "default": "undefined",
+            "description": "Specifies the variant of the component."
         },
         {
             "name": "plain",
@@ -166,7 +174,8 @@
             "readonly": false,
             "type": "boolean",
             "default": "false",
-            "description": "Add a plain textual class to the button without a background initially."
+            "description": "Add a plain textual class to the button without a background initially.",
+            "deprecated": "since v4.2.0. Use a contrast severity instead."
         },
         {
             "name": "fluid",
@@ -207,12 +216,26 @@
             "type": "boolean",
             "default": "false",
             "description": "When enabled, it removes component related styles in the core."
+        },
+        {
+            "name": "to",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Route Location the router-link should navigate to when clicked on."
         }
     ],
     "slots": [
         {
             "name": "default",
-            "parameters": [],
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">a11yAttrs</span>: <span class=\"doc-option-parameter-type\">Record</span>, <span class=\"doc-option-parameter-type\">// Object containing the accessibility attributes.</span>\n }"
+                }
+            ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom content such as icons, images and text can be placed inside the button via the default slot. Note that when slot is used, label, icon and badge properties are not included."
         },

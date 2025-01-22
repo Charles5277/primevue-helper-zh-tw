@@ -9,10 +9,26 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "Nullable<string>",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "size",
             "optional": true,
             "readonly": false,
-            "type": "\"large\" | \"small\"",
+            "type": "null | \"small\" | \"large\"",
             "default": "",
             "description": "Defines the size of the component."
         },
@@ -20,7 +36,7 @@
             "name": "invalid",
             "optional": true,
             "readonly": false,
-            "type": "boolean",
+            "type": "null | boolean",
             "default": "false",
             "description": "When present, it specifies that the component should have invalid state style."
         },
@@ -28,7 +44,7 @@
             "name": "variant",
             "optional": true,
             "readonly": false,
-            "type": "\"outlined\" | \"filled\"",
+            "type": "null | \"outlined\" | \"filled\"",
             "default": "outlined",
             "description": "Specifies the input variant of the component."
         },
@@ -36,9 +52,17 @@
             "name": "fluid",
             "optional": true,
             "readonly": false,
-            "type": "boolean",
+            "type": "null | boolean",
             "default": "null",
             "description": "Spans 100% width of the container when enabled."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -87,6 +111,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "undefined | string",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         }
     ],
     "template": "\n<InputText type=\"text\" v-model=\"value\" />\n"

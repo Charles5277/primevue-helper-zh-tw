@@ -9,10 +9,26 @@
             "description": "An array of menuitems."
         },
         {
+            "name": "breakpoint",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "960px",
+            "description": "The breakpoint to define the maximum width boundary."
+        },
+        {
+            "name": "global",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "Attaches the menu to document instead of a particular item."
+        },
+        {
             "name": "appendTo",
             "optional": true,
             "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
             "default": "body",
             "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached."
         },
@@ -31,14 +47,6 @@
             "type": "number",
             "default": "0",
             "description": "Base zIndex value to use in layering."
-        },
-        {
-            "name": "global",
-            "optional": true,
-            "readonly": false,
-            "type": "boolean",
-            "default": "false",
-            "description": "Attaches the menu to document instead of a particular item."
         },
         {
             "name": "tabindex",

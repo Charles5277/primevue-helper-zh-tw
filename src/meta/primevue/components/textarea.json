@@ -9,12 +9,36 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "Nullable<string>",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "autoResize",
             "optional": true,
             "readonly": false,
             "type": "boolean",
             "default": "false",
             "description": "When present, height of textarea changes as being typed."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
         },
         {
             "name": "invalid",
@@ -39,6 +63,14 @@
             "type": "boolean",
             "default": "null",
             "description": "Spans 100% width of the container when enabled."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -74,6 +106,20 @@
         }
     ],
     "slots": [],
-    "emits": [],
+    "emits": [
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "string",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
+        }
+    ],
     "template": "\n<Textarea v-model=\"value\" rows=\"5\" cols=\"30\" />\n"
 }

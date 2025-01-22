@@ -49,6 +49,22 @@
             "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
         },
         {
+            "name": "contextMenu",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "Enables context menu integration."
+        },
+        {
+            "name": "contextMenuSelection",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "Selected row instance with the ContextMenu."
+        },
+        {
             "name": "rows",
             "optional": true,
             "readonly": false,
@@ -300,7 +316,7 @@
             "name": "size",
             "optional": true,
             "readonly": false,
-            "type": "\"large\" | \"small\"",
+            "type": "\"small\" | \"large\"",
             "default": "",
             "description": "Defines the size of the table."
         },
@@ -375,18 +391,6 @@
             "description": "Custom footer template."
         },
         {
-            "name": "paginatorstart",
-            "parameters": [],
-            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Custom paginator start template."
-        },
-        {
-            "name": "paginatorend",
-            "parameters": [],
-            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Custom paginator end template."
-        },
-        {
             "name": "empty",
             "parameters": [],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
@@ -403,6 +407,24 @@
             "parameters": [],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom checkbox icon template."
+        },
+        {
+            "name": "paginatorcontainer",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom paginator container template."
+        },
+        {
+            "name": "paginatorstart",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom paginator start template."
+        },
+        {
+            "name": "paginatorend",
+            "parameters": [],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom paginator end template."
         },
         {
             "name": "paginatorfirstpagelinkicon",
@@ -504,6 +526,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the selection keys change."
+        },
+        {
+            "name": "update:contextMenuSelection",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "any",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the contextMenuSelection changes."
         },
         {
             "name": "update:first",
@@ -673,6 +708,19 @@
             ],
             "returnType": "void",
             "description": "Callback to invoke when a column is resized."
+        },
+        {
+            "name": "row-contextmenu",
+            "parameters": [
+                {
+                    "name": "event",
+                    "optional": false,
+                    "type": "TreeTableRowContextMenuEvent",
+                    "description": "Custom row context menu event."
+                }
+            ],
+            "returnType": "void",
+            "description": "Callback to invoke when a row is selected with a ContextMenu."
         }
     ],
     "template": "\n<TreeTable :value=\"nodes\" tableStyle=\"min-width: 50rem\">\n    <Column field=\"name\" header=\"Name\" expander style=\"width: 34%\"></Column>\n    <Column field=\"size\" header=\"Size\" style=\"width: 33%\"></Column>\n    <Column field=\"type\" header=\"Type\" style=\"width: 33%\"></Column>\n</TreeTable>\n"

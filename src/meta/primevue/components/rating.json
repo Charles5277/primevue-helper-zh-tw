@@ -9,12 +9,28 @@
             "description": "Value of the rating."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "number",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
             "name": "name",
             "optional": true,
             "readonly": false,
             "type": "string",
             "default": "",
             "description": "Name of the element."
+        },
+        {
+            "name": "invalid",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When present, it specifies that the component should have invalid state style."
         },
         {
             "name": "disabled",
@@ -55,6 +71,14 @@
             "type": "string",
             "default": "",
             "description": "Icon for the off state."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -130,6 +154,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "number",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "change",

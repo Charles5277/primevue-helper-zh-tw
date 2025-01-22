@@ -9,6 +9,22 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "number | number[]",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "min",
             "optional": true,
             "readonly": false,
@@ -49,6 +65,14 @@
             "description": "When speficed, allows two boundary values to be picked."
         },
         {
+            "name": "invalid",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When present, it specifies that the component should have invalid state style."
+        },
+        {
             "name": "disabled",
             "optional": true,
             "readonly": false,
@@ -79,6 +103,14 @@
             "type": "string",
             "default": "",
             "description": "Used to define a string that labels the element."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -127,6 +159,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "number | number[]",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "change",

@@ -11,5 +11,5 @@
     ],
     "slots": [],
     "emits": [],
-    "template": "\n<Button label=\"Select a Product\" icon=\"pi pi-search\" @click=\"showProducts\" />\n\n<DynamicDialog />\n"
+    "template": "<div>not found template</div>"
 }

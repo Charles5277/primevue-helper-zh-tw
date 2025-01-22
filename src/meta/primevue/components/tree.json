@@ -76,9 +76,9 @@
             "name": "filterBy",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | Function",
             "default": "label",
-            "description": "When filtering is enabled, filterBy decides which field or fields (comma separated) to search against."
+            "description": "When filtering is enabled, filterBy decides which field or fields (comma separated) to search against. A callable taking a TreeNode can be provided instead of a list of field names."
         },
         {
             "name": "filterMode",
@@ -176,7 +176,7 @@
                 {
                     "name": "scope",
                     "optional": false,
-                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">node</span>: <span class=\"doc-option-parameter-type\">TreeNode</span>, <span class=\"doc-option-parameter-type\">// Tree node instance</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">selected</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Selection state</span>\n }"
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">node</span>: <span class=\"doc-option-parameter-type\">TreeNode</span>, <span class=\"doc-option-parameter-type\">// Tree node instance</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">selected</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Selection state</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">expanded</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Expanded state</span>\n }"
                 }
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
@@ -288,6 +288,32 @@
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom checkbox icon"
+        },
+        {
+            "name": "header",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">TreeNode</span>, <span class=\"doc-option-parameter-type\">// Current value</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">expandedKeys</span>: <span class=\"doc-option-parameter-type\">TreeExpandedKeys</span>, <span class=\"doc-option-parameter-type\">// Current expanded key</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">selectionKeys</span>: <span class=\"doc-option-parameter-type\">TreeSelectionKeys</span>, <span class=\"doc-option-parameter-type\">// Current selected keys</span>\n }",
+                    "description": "header slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom header"
+        },
+        {
+            "name": "footer",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">TreeNode</span>, <span class=\"doc-option-parameter-type\">// Current value</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">expandedKeys</span>: <span class=\"doc-option-parameter-type\">TreeExpandedKeys</span>, <span class=\"doc-option-parameter-type\">// Current expanded key</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">selectionKeys</span>: <span class=\"doc-option-parameter-type\">TreeSelectionKeys</span>, <span class=\"doc-option-parameter-type\">// Current selected keys</span>\n }",
+                    "description": "footer slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom footer"
         }
     ],
     "emits": [

@@ -9,6 +9,22 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "suggestions",
             "optional": true,
             "readonly": false,
@@ -105,6 +121,14 @@
             "description": "Whether the autocomplete is in loading state."
         },
         {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
+        },
+        {
             "name": "invalid",
             "optional": true,
             "readonly": false,
@@ -156,7 +180,7 @@
             "name": "appendTo",
             "optional": true,
             "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
             "default": "body",
             "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached.\nSpecial keywords are 'body' for document body and 'self' for the element itself."
         },
@@ -354,6 +378,14 @@
             "description": "Text to display when filtering does not return any results. Defaults to value from PrimeVue locale configuration."
         },
         {
+            "name": "showEmptyMessage",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "true",
+            "description": "When enabled, empty search message will be visible."
+        },
+        {
             "name": "tabindex",
             "optional": true,
             "readonly": false,
@@ -384,6 +416,14 @@
             "type": "string",
             "default": "",
             "description": "Identifier of the underlying input element."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -607,6 +647,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "any",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "change",

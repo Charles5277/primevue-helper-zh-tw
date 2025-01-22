@@ -1,0 +1,86 @@
+{
+    "props": [
+        {
+            "name": "resolver",
+            "optional": true,
+            "readonly": false,
+            "type": "Function",
+            "default": ""
+        },
+        {
+            "name": "initialValues",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "The initial values for the form fields."
+        },
+        {
+            "name": "validateOnValueUpdate",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean | string[]",
+            "default": "true",
+            "description": "Whether to validate the form fields when the values change."
+        },
+        {
+            "name": "validateOnBlur",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean | string[]",
+            "default": "false",
+            "description": "Whether to validate the form fields when they lose focus (on blur)."
+        },
+        {
+            "name": "validateOnMount",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean | string[]",
+            "default": "false",
+            "description": "Whether to validate the form fields immediately after the form is mounted."
+        },
+        {
+            "name": "validateOnSubmit",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean | string[]",
+            "default": "true",
+            "description": "Whether to validate the form fields when the form is submitted."
+        },
+        {
+            "name": "dt",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "It generates scoped CSS variables using design tokens for the component."
+        },
+        {
+            "name": "pt",
+            "optional": true,
+            "readonly": false,
+            "type": "PassThrough<FormPassThroughOptions>",
+            "default": "",
+            "description": "Used to pass attributes to DOM elements inside the component."
+        },
+        {
+            "name": "ptOptions",
+            "optional": true,
+            "readonly": false,
+            "type": "PassThroughOptions",
+            "default": "",
+            "description": "Used to configure passthrough(pt) options of the component."
+        },
+        {
+            "name": "unstyled",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When enabled, it removes component related styles in the core."
+        }
+    ],
+    "slots": [],
+    "emits": [],
+    "template": "<div>not found template</div>"
+}

@@ -28,7 +28,7 @@
             "name": "size",
             "optional": true,
             "readonly": false,
-            "type": "\"normal\" | \"large\" | \"xlarge\"",
+            "type": "\"large\" | \"normal\" | \"xlarge\"",
             "default": "normal",
             "description": "Size of the element."
         },
@@ -117,5 +117,5 @@
             "description": "Triggered when an error occurs while loading an image file."
         }
     ],
-    "template": "\n<Avatar icon=\"pi pi-user\" class=\"mr-2\" size=\"xlarge\" />\n<Avatar icon=\"pi pi-user\" class=\"mr-2\" size=\"large\" style=\"background-color: #ece9fc; color: #2a1261\" />\n<Avatar icon=\"pi pi-user\" style=\"background-color: #dee9fc; color: #1a2551\" />\n\n<Avatar icon=\"pi pi-user\" class=\"mr-2\" size=\"xlarge\" shape=\"circle\" />\n<Avatar icon=\"pi pi-user\" class=\"mr-2\" size=\"large\" style=\"background-color: #ece9fc; color: #2a1261\" shape=\"circle\" />\n<Avatar icon=\"pi pi-user\" style=\"background-color: #dee9fc; color: #1a2551\" shape=\"circle\" />\n\n<OverlayBadge value=\"4\" severity=\"danger\" class=\"inline-flex\">\n    <Avatar icon=\"pi pi-user\" size=\"xlarge\" />\n</OverlayBadge>\n"
+    "template": "\n<AvatarGroup>\n    <Avatar image=\"/images/avatar/amyelsner.png\" shape=\"circle\" />\n    <Avatar image=\"/images/avatar/asiyajavayant.png\" shape=\"circle\" />\n    <Avatar image=\"/images/avatar/onyamalimba.png\" shape=\"circle\" />\n    <Avatar image=\"/images/avatar/ionibowcher.png\" shape=\"circle\" />\n    <Avatar image=\"/images/avatar/xuxuefeng.png\" shape=\"circle\" />\n    <Avatar label=\"+2\" shape=\"circle\" />\n</AvatarGroup>\n"
 }

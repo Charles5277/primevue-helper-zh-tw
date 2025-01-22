@@ -5,8 +5,32 @@
             "optional": true,
             "readonly": false,
             "type": "string | boolean",
-            "default": "false",
+            "default": "null",
             "description": "Specifies whether a inputotp should be checked or not."
+        },
+        {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "string | boolean",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
         },
         {
             "name": "invalid",
@@ -73,6 +97,14 @@
             "description": "When present, it specifies that an input field is integer-only."
         },
         {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
+        },
+        {
             "name": "dt",
             "optional": true,
             "readonly": false,
@@ -126,7 +158,7 @@
                 {
                     "name": "value",
                     "optional": false,
-                    "type": "boolean",
+                    "type": "string",
                     "description": "New value."
                 }
             ],
@@ -134,13 +166,26 @@
             "description": "Emitted when the value changes."
         },
         {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "string",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
+        },
+        {
             "name": "change",
             "parameters": [
                 {
                     "name": "event",
                     "optional": false,
-                    "type": "Event",
-                    "description": "Browser event."
+                    "type": "InputOtpChangeEvent",
+                    "description": "Custom change event."
                 }
             ],
             "returnType": "void",

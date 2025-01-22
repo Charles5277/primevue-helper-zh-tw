@@ -12,7 +12,7 @@
             "name": "as",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | Component<any, any, any, ComputedOptions, MethodOptions, Object, any>",
             "default": "BUTTON",
             "description": "Use to change the HTML tag of root element."
         },
@@ -56,7 +56,7 @@
                 {
                     "name": "scope",
                     "optional": false,
-                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">active</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Whether the step is active.</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">undefined</span>, <span class=\"doc-option-parameter-type\">// Value of step.</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">a11yAttrs</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// A11t attributes</span>\n \t <span class=\"ml-3 doc-option-parameter-name\">activateCallback</span>: <span class=\"doc-option-parameter-type\">() &rArr; void</span>, <span class=\"doc-option-parameter-type\">// Click function.</span>\n}"
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">active</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Whether the step is active.</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">undefined</span>, <span class=\"doc-option-parameter-type\">// Value of step.</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">a11yAttrs</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// A11t attributes</span>\n \t <span class=\"ml-3 doc-option-parameter-name\">activateCallback</span>: <span class=\"doc-option-parameter-type\">(<span class=\"doc-option-parameter-name\">value</span>: undefined) &rArr; void</span>, <span class=\"doc-option-parameter-type\">// Click function.</span>\n}"
                 }
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",

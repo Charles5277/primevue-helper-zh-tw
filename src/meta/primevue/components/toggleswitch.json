@@ -9,6 +9,22 @@
             "description": "Specifies whether a toggleswitch should be checked or not."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "string | boolean",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "trueValue",
             "optional": true,
             "readonly": false,
@@ -97,6 +113,14 @@
             "description": "Establishes a string value that labels the component."
         },
         {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
+        },
+        {
             "name": "dt",
             "optional": true,
             "readonly": false,
@@ -129,7 +153,21 @@
             "description": "When enabled, it removes component related styles in the core."
         }
     ],
-    "slots": [],
+    "slots": [
+        {
+            "name": "handle",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">checked</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Current checked state of the item as a boolean.</span>\n }",
+                    "description": "handle slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom handle template."
+        }
+    ],
     "emits": [
         {
             "name": "update:modelValue",
@@ -143,6 +181,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "boolean",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "change",

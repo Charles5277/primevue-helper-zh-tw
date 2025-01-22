@@ -17,14 +17,6 @@
             "description": "When present, it specifies that the element should be disabled."
         },
         {
-            "name": "closeIcon",
-            "optional": true,
-            "readonly": false,
-            "type": "string",
-            "default": "",
-            "description": "Icon to display in the close button."
-        },
-        {
             "name": "displayProps",
             "optional": true,
             "readonly": false,

@@ -9,6 +9,22 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "options",
             "optional": true,
             "readonly": false,
@@ -65,6 +81,22 @@
             "description": "Default text to display when no option is selected."
         },
         {
+            "name": "breakpoint",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "960px",
+            "description": "The breakpoint to define the maximum width boundary."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
+        },
+        {
             "name": "invalid",
             "optional": true,
             "readonly": false,
@@ -95,6 +127,22 @@
             "type": "string",
             "default": "",
             "description": "A property to uniquely identify an option."
+        },
+        {
+            "name": "showClear",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When enabled, a clear icon is displayed to clear the value."
+        },
+        {
+            "name": "clearIcon",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Icon to display in clear button."
         },
         {
             "name": "inputId",
@@ -183,7 +231,7 @@
             "name": "appendTo",
             "optional": true,
             "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
             "default": "body",
             "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached. Special keywords are 'body' for document body and 'self' for the element itself."
         },
@@ -324,6 +372,14 @@
             "description": "Establishes a string value that labels the component."
         },
         {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
+        },
+        {
             "name": "dt",
             "optional": true,
             "readonly": false,
@@ -397,9 +453,52 @@
         },
         {
             "name": "optiongroupicon",
-            "parameters": [],
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">class</span>: <span class=\"doc-option-parameter-type\">string</span>, <span class=\"doc-option-parameter-type\">// Style class of the icon.</span>\n }"
+                }
+            ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom option group icon template."
+        },
+        {
+            "name": "header",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// Current value</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">options</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// Options of the component</span>\n }"
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom header template."
+        },
+        {
+            "name": "footer",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">value</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// Current value</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">options</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// Options of the component</span>\n }"
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom footer template."
+        },
+        {
+            "name": "clearicon",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n \t <span class=\"ml-3 doc-option-parameter-name\">clearCallback</span>: <span class=\"doc-option-parameter-type\">(<span class=\"doc-option-parameter-name\">event</span>: Event) &rArr; void</span>, <span class=\"doc-option-parameter-type\">// Clear icon click function.</span>\n}",
+                    "description": "clear icon slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom clear icon template."
         }
     ],
     "emits": [
@@ -415,6 +514,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "any",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "change",
@@ -506,5 +618,5 @@
             "description": "Callback to invoke when the overlay is hidden."
         }
     ],
-    "template": "\n<CascadeSelect v-model=\"selectedCity\" :options=\"countries\" optionLabel=\"cname\" optionGroupLabel=\"name\"\n    :optionGroupChildren=\"['states', 'cities']\" style=\"min-width: 14rem\" placeholder=\"Select a City\" />\n"
+    "template": "\n<CascadeSelect v-model=\"selectedCity\" :options=\"countries\" optionLabel=\"cname\" optionGroupLabel=\"name\"\n    :optionGroupChildren=\"['states', 'cities']\" class=\"w-56\" placeholder=\"Select a City\" />\n"
 }

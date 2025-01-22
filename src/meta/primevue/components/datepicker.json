@@ -9,6 +9,22 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "null | Date | Date[] | (null | Date)[]",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "selectionMode",
             "optional": true,
             "readonly": false,
@@ -313,6 +329,14 @@
             "description": "Whether to allow entering the date manually via typing."
         },
         {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
+        },
+        {
             "name": "invalid",
             "optional": true,
             "readonly": false,
@@ -353,28 +377,12 @@
             "description": "Placeholder text for the input."
         },
         {
-            "name": "name",
-            "optional": true,
-            "readonly": false,
-            "type": "string",
-            "default": "",
-            "description": "Name of the element."
-        },
-        {
             "name": "appendTo",
             "optional": true,
             "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
             "default": "body",
             "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached."
-        },
-        {
-            "name": "id",
-            "optional": true,
-            "readonly": false,
-            "type": "string",
-            "default": "",
-            "description": "Identifier of the element."
         },
         {
             "name": "inputId",
@@ -471,6 +479,14 @@
             "type": "string",
             "default": "",
             "description": "Establishes a string value that labels the component."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -665,6 +681,19 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "undefined | null | Date | Date[] | (null | Date)[]",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
         },
         {
             "name": "input",

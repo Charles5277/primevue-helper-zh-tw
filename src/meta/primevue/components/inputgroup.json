@@ -1,14 +1,6 @@
 {
     "props": [
         {
-            "name": "fluid",
-            "optional": true,
-            "readonly": false,
-            "type": "boolean",
-            "default": "null",
-            "description": "Spans 100% width of the container when enabled."
-        },
-        {
             "name": "dt",
             "optional": true,
             "readonly": false,
@@ -50,5 +42,5 @@
         }
     ],
     "emits": [],
-    "template": "\n<InputGroup>\n    <InputGroupAddon>\n        <i class=\"pi pi-user\"></i>\n    </InputGroupAddon>\n    <InputText placeholder=\"Username\" />\n</InputGroup>\n\n<InputGroup>\n    <InputGroupAddon>$</InputGroupAddon>\n    <InputNumber placeholder=\"Price\" />\n    <InputGroupAddon>.00</InputGroupAddon>\n</InputGroup>\n\n<InputGroup>\n    <InputGroupAddon>www</InputGroupAddon>\n    <InputText placeholder=\"Website\" />\n</InputGroup>\n"
+    "template": "\n<InputGroup>\n    <InputGroupAddon>\n        <i class=\"pi pi-user\"></i>\n    </InputGroupAddon>\n    <InputText v-model=\"text1\" placeholder=\"Username\" />\n</InputGroup>\n\n<InputGroup>\n    <InputGroupAddon>$</InputGroupAddon>\n    <InputNumber v-model=\"number\" placeholder=\"Price\" />\n    <InputGroupAddon>.00</InputGroupAddon>\n</InputGroup>\n\n<InputGroup>\n    <InputGroupAddon>www</InputGroupAddon>\n    <InputText v-model=\"text2\" placeholder=\"Website\" />\n</InputGroup>\n\n<InputGroup>\n    <InputGroupAddon>\n        <i class=\"pi pi-map\"></i>\n    </InputGroupAddon>\n    <Select v-model=\"selectedCity\" :options=\"cities\" optionLabel=\"name\" placeholder=\"City\" />\n</InputGroup>\n"
 }

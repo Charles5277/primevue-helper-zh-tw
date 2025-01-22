@@ -1,6 +1,14 @@
 {
     "props": [
         {
+            "name": "src",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Image url."
+        },
+        {
             "name": "preview",
             "optional": true,
             "readonly": false,

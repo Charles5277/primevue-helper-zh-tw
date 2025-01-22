@@ -122,5 +122,5 @@
             "description": "Callback to invoke when resize ends."
         }
     ],
-    "template": "\nimport Splitter from 'primevue/splitter';\nimport SplitterPanel from 'primevue/splitterpanel';\n"
+    "template": "<div>not found template</div>"
 }

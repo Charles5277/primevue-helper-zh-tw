@@ -97,6 +97,30 @@
             "description": "Used to access message options."
         },
         {
+            "name": "onMouseEnter",
+            "optional": true,
+            "readonly": false,
+            "type": "Function",
+            "default": "",
+            "description": "Used to specify a callback function to be run when the mouseenter event is fired on the message component."
+        },
+        {
+            "name": "onMouseLeave",
+            "optional": true,
+            "readonly": false,
+            "type": "Function",
+            "default": "",
+            "description": "Used to specify a callback function to be run when the mouseleave event is fired on the message component."
+        },
+        {
+            "name": "onClick",
+            "optional": true,
+            "readonly": false,
+            "type": "Function",
+            "default": "",
+            "description": "Used to specify a callback function to be run when the click event is fired on the message component."
+        },
+        {
             "name": "dt",
             "optional": true,
             "readonly": false,

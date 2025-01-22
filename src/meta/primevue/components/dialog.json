@@ -172,7 +172,7 @@
             "name": "appendTo",
             "optional": true,
             "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
             "default": "body",
             "description": "A valid query selector or an HTMLElement to specify where the dialog gets attached."
         },
@@ -373,6 +373,19 @@
             ],
             "returnType": "void",
             "description": "Fired when a dialog gets unmaximized."
+        },
+        {
+            "name": "dragstart",
+            "parameters": [
+                {
+                    "name": "event",
+                    "optional": false,
+                    "type": "Event",
+                    "description": "Browser event."
+                }
+            ],
+            "returnType": "void",
+            "description": "Fired when a dialog drag begins."
         },
         {
             "name": "dragend",

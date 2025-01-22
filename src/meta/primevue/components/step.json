@@ -20,7 +20,7 @@
             "name": "as",
             "optional": true,
             "readonly": false,
-            "type": "string",
+            "type": "string | Component<any, any, any, ComputedOptions, MethodOptions, Object, any>",
             "default": "BUTTON",
             "description": "Use to change the HTML tag of root element."
         },

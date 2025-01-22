@@ -1,0 +1,102 @@
+{
+    "props": [
+        {
+            "name": "resolver",
+            "optional": true,
+            "readonly": false,
+            "type": "Function",
+            "default": ""
+        },
+        {
+            "name": "initialValue",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "The initial value for the form field."
+        },
+        {
+            "name": "validateOnValueUpdate",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "",
+            "description": "Whether to validate the form field when the value change."
+        },
+        {
+            "name": "validateOnBlur",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "",
+            "description": "Whether to validate the form field when it loses focus (on blur)."
+        },
+        {
+            "name": "validateOnMount",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "",
+            "description": "Whether to validate the form field immediately after the form is mounted."
+        },
+        {
+            "name": "validateOnSubmit",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "",
+            "description": "Whether to validate the form field when the form is submitted."
+        },
+        {
+            "name": "as",
+            "optional": true,
+            "readonly": false,
+            "type": "string | Component<any, any, any, ComputedOptions, MethodOptions, Object, any>",
+            "default": "DIV",
+            "description": "Use to change the HTML tag of root element."
+        },
+        {
+            "name": "asChild",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When enabled, it changes the default rendered element for the one passed as a child element."
+        },
+        {
+            "name": "dt",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "It generates scoped CSS variables using design tokens for the component."
+        },
+        {
+            "name": "pt",
+            "optional": true,
+            "readonly": false,
+            "type": "PassThrough<FormFieldPassThroughOptions>",
+            "default": "",
+            "description": "Used to pass attributes to DOM elements inside the component."
+        },
+        {
+            "name": "ptOptions",
+            "optional": true,
+            "readonly": false,
+            "type": "PassThroughOptions",
+            "default": "",
+            "description": "Used to configure passthrough(pt) options of the component."
+        },
+        {
+            "name": "unstyled",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When enabled, it removes component related styles in the core."
+        }
+    ],
+    "slots": [],
+    "emits": [],
+    "template": "<div>not found template</div>"
+}

@@ -31,6 +31,14 @@
             "type": "boolean",
             "default": "false",
             "description": "When enabled, it removes component related styles in the core."
+        },
+        {
+            "name": "variant",
+            "optional": true,
+            "readonly": false,
+            "type": "\"in\" | \"over\" | \"on\"",
+            "default": "false",
+            "description": "Defines the positioning of the label relative to the input."
         }
     ],
     "slots": [],

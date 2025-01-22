@@ -310,7 +310,7 @@
                 {
                     "name": "scope",
                     "optional": false,
-                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">index</span>: <span class=\"doc-option-parameter-type\">number</span>, <span class=\"doc-option-parameter-type\">// Index of the indicator item</span>\n }",
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">index</span>: <span class=\"doc-option-parameter-type\">number</span>, <span class=\"doc-option-parameter-type\">// Index of the indicator item</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">activeIndex</span>: <span class=\"doc-option-parameter-type\">number</span>, <span class=\"doc-option-parameter-type\">// Current active item index as a number.</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">tabindex</span>: <span class=\"doc-option-parameter-type\">number</span>, <span class=\"doc-option-parameter-type\">// Index of the element in tabbing order.</span>\n }",
                     "description": "indicator slot's params."
                 }
             ],

@@ -12,7 +12,7 @@
             "name": "pt",
             "optional": true,
             "readonly": false,
-            "type": "PassThrough<IconFieldPassThroughOptions<any>>",
+            "type": "PassThrough<IftaLabelPassThroughOptions>",
             "default": "",
             "description": "Used to pass attributes to DOM elements inside the component."
         },
@@ -33,14 +33,7 @@
             "description": "When enabled, it removes component related styles in the core."
         }
     ],
-    "slots": [
-        {
-            "name": "default",
-            "parameters": [],
-            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
-            "description": "Default slot for content."
-        }
-    ],
+    "slots": [],
     "emits": [],
-    "template": "\n<IconField>\n    <InputIcon class=\"pi pi-search\" />\n    <InputText v-model=\"value1\" placeholder=\"Search\" />\n</IconField>\n\n<IconField>\n    <InputText v-model=\"value2\" variant=\"filled\" />\n    <InputIcon class=\"pi pi-spin pi-spinner\" />\n</IconField>\n"
+    "template": "\n<IftaLabel>\n    <InputText id=\"username\" v-model=\"value\" />\n    <label for=\"username\">Username</label>\n</IftaLabel>\n"
 }

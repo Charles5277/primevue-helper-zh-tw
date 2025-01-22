@@ -9,12 +9,52 @@
             "description": "Value of the component."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
+            "name": "name",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "The name attribute for the element, typically used in form submissions."
+        },
+        {
             "name": "options",
             "optional": true,
             "readonly": false,
             "type": "TreeNode[]",
             "default": "",
             "description": "An array of treenodes."
+        },
+        {
+            "name": "expandedKeys",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "A map of keys to represent the expansion state in controlled mode."
+        },
+        {
+            "name": "showClear",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When enabled, a clear icon is displayed to clear the value."
+        },
+        {
+            "name": "clearIcon",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Icon to display in clear button."
         },
         {
             "name": "scrollHeight",
@@ -25,12 +65,148 @@
             "description": "Height of the viewport, a scrollbar is defined if height of list exceeds this value."
         },
         {
+            "name": "selectionMode",
+            "optional": true,
+            "readonly": false,
+            "type": "\"single\" | \"multiple\" | \"checkbox\"",
+            "default": "",
+            "description": "Defines the selection mode."
+        },
+        {
+            "name": "fluid",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "null",
+            "description": "Spans 100% width of the container when enabled."
+        },
+        {
+            "name": "appendTo",
+            "optional": true,
+            "readonly": false,
+            "type": "HTMLElement | HintedString<\"body\" | \"self\">",
+            "default": "body",
+            "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached."
+        },
+        {
+            "name": "display",
+            "optional": true,
+            "readonly": false,
+            "type": "\"comma\" | \"chip\"",
+            "default": "comma",
+            "description": "Defines how the selected items are displayed."
+        },
+        {
+            "name": "selectedItemsLabel",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "null",
+            "description": "Label to display after exceeding max selected labels."
+        },
+        {
+            "name": "maxSelectedLabels",
+            "optional": true,
+            "readonly": false,
+            "type": "number",
+            "default": "",
+            "description": "Decides how many selected item labels to show at most."
+        },
+        {
+            "name": "metaKeySelection",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
+        },
+        {
+            "name": "loading",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "Whether to display loading indicator."
+        },
+        {
+            "name": "loadingIcon",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Icon to display when tree is loading."
+        },
+        {
+            "name": "loadingMode",
+            "optional": true,
+            "readonly": false,
+            "type": "\"mask\" | \"icon\"",
+            "default": "mask",
+            "description": "Loading mode display."
+        },
+        {
+            "name": "filter",
+            "optional": true,
+            "readonly": false,
+            "type": "boolean",
+            "default": "false",
+            "description": "When specified, displays an input field to filter the items."
+        },
+        {
+            "name": "filterBy",
+            "optional": true,
+            "readonly": false,
+            "type": "string | Function",
+            "default": "label",
+            "description": "When filtering is enabled, filterBy decides which field or fields (comma separated) to search against. A callable taking a TreeNode can be provided instead of a list of field names."
+        },
+        {
+            "name": "filterMode",
+            "optional": true,
+            "readonly": false,
+            "type": "\"lenient\" | \"strict\"",
+            "default": "lenient",
+            "description": "Mode for filtering."
+        },
+        {
+            "name": "filterPlaceholder",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Placeholder text to show when filter input is empty."
+        },
+        {
+            "name": "filterLocale",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "",
+            "description": "Locale to use in filtering. The default locale is the host environment's current locale."
+        },
+        {
+            "name": "emptyMessage",
+            "optional": true,
+            "readonly": false,
+            "type": "string",
+            "default": "No available options",
+            "description": "Text to display when there are no options available. Defaults to value from PrimeVue locale configuration."
+        },
+        {
             "name": "placeholder",
             "optional": true,
             "readonly": false,
             "type": "string",
             "default": "",
             "description": "Label to display when there are no selections."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
         },
         {
             "name": "invalid",
@@ -65,62 +241,6 @@
             "description": "Index of the element in tabbing order."
         },
         {
-            "name": "selectionMode",
-            "optional": true,
-            "readonly": false,
-            "type": "\"single\" | \"multiple\" | \"checkbox\"",
-            "default": "",
-            "description": "Defines the selection mode."
-        },
-        {
-            "name": "fluid",
-            "optional": true,
-            "readonly": false,
-            "type": "boolean",
-            "default": "null",
-            "description": "Spans 100% width of the container when enabled."
-        },
-        {
-            "name": "panelClass",
-            "optional": true,
-            "readonly": false,
-            "type": "any",
-            "default": "",
-            "description": "Style class of the overlay panel."
-        },
-        {
-            "name": "appendTo",
-            "optional": true,
-            "readonly": false,
-            "type": "HintedString<\"body\" | \"self\"> | HTMLElement",
-            "default": "body",
-            "description": "A valid query selector or an HTMLElement to specify where the overlay gets attached."
-        },
-        {
-            "name": "emptyMessage",
-            "optional": true,
-            "readonly": false,
-            "type": "string",
-            "default": "No available options",
-            "description": "Text to display when there are no options available. Defaults to value from PrimeVue locale configuration."
-        },
-        {
-            "name": "display",
-            "optional": true,
-            "readonly": false,
-            "type": "\"comma\" | \"chip\"",
-            "default": "comma",
-            "description": "Defines how the selected items are displayed."
-        },
-        {
-            "name": "metaKeySelection",
-            "optional": true,
-            "readonly": false,
-            "type": "boolean",
-            "default": "false",
-            "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
-        },
-        {
             "name": "inputId",
             "optional": true,
             "readonly": false,
@@ -153,6 +273,14 @@
             "description": "Used to pass all properties of the HTMLInputElement to the focusable input element inside the component."
         },
         {
+            "name": "panelClass",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "Style class of the overlay panel."
+        },
+        {
             "name": "ariaLabelledby",
             "optional": true,
             "readonly": false,
@@ -167,6 +295,14 @@
             "type": "string",
             "default": "",
             "description": "Establishes a string value that labels the component."
+        },
+        {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
         },
         {
             "name": "dt",
@@ -214,6 +350,19 @@
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom value template."
+        },
+        {
+            "name": "option",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n  \t <span class=\"ml-3 doc-option-parameter-name\">node</span>: <span class=\"doc-option-parameter-type\">any</span>, <span class=\"doc-option-parameter-type\">// Current node</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">selected</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Selection state</span>\n  \t <span class=\"ml-3 doc-option-parameter-name\">expanded</span>: <span class=\"doc-option-parameter-type\">boolean</span>, <span class=\"doc-option-parameter-type\">// Expanded state</span>\n }",
+                    "description": "option slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom option template."
         },
         {
             "name": "header",
@@ -313,6 +462,19 @@
             ],
             "returnType": "VNode<RendererNode, RendererElement, Object>[]",
             "description": "Custom item checkbox icon template."
+        },
+        {
+            "name": "clearicon",
+            "parameters": [
+                {
+                    "name": "scope",
+                    "optional": false,
+                    "type": "{\n \t <span class=\"ml-3 doc-option-parameter-name\">clearCallback</span>: <span class=\"doc-option-parameter-type\">(<span class=\"doc-option-parameter-name\">event</span>: Event) &rArr; void</span>, <span class=\"doc-option-parameter-type\">// Clear icon click function.</span>\n}",
+                    "description": "clear icon slot's params."
+                }
+            ],
+            "returnType": "VNode<RendererNode, RendererElement, Object>[]",
+            "description": "Custom clear icon template."
         }
     ],
     "emits": [
@@ -328,6 +490,32 @@
             ],
             "returnType": "void",
             "description": "Emitted when the value changes."
+        },
+        {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "any",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
+        },
+        {
+            "name": "update:expandedKeys",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "TreeExpandedKeys",
+                    "description": "New expanded keys."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the expanded keys change."
         },
         {
             "name": "change",

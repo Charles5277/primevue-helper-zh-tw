@@ -17,6 +17,14 @@
             "description": "Value binding of the checkbox."
         },
         {
+            "name": "defaultValue",
+            "optional": true,
+            "readonly": false,
+            "type": "any",
+            "default": "",
+            "description": "The default value for the input when not controlled by  `modelValue` ."
+        },
+        {
             "name": "name",
             "optional": true,
             "readonly": false,
@@ -31,6 +39,14 @@
             "type": "boolean",
             "default": "",
             "description": "Allows to select a boolean value."
+        },
+        {
+            "name": "size",
+            "optional": true,
+            "readonly": false,
+            "type": "\"small\" | \"large\"",
+            "default": "",
+            "description": "Defines the size of the component."
         },
         {
             "name": "invalid",
@@ -113,6 +129,14 @@
             "description": "Establishes a string value that labels the component."
         },
         {
+            "name": "formControl",
+            "optional": true,
+            "readonly": false,
+            "type": "Record<string, any>",
+            "default": "",
+            "description": "Form control object, typically used for handling validation and form state."
+        },
+        {
             "name": "dt",
             "optional": true,
             "readonly": false,
@@ -161,6 +185,19 @@
             "description": "Emitted when the value changes."
         },
         {
+            "name": "value-change",
+            "parameters": [
+                {
+                    "name": "value",
+                    "optional": false,
+                    "type": "any",
+                    "description": "New value."
+                }
+            ],
+            "returnType": "void",
+            "description": "Emitted when the value changes in uncontrolled mode."
+        },
+        {
             "name": "change",
             "parameters": [
                 {
@@ -200,5 +237,5 @@
             "description": "Callback to invoke when the component loses focus."
         }
     ],
-    "template": "\nimport RadioButton from 'primevue/radiobutton';\n"
+    "template": "\n<label for=\"rb1\">One</label>\n<RadioButton inputId=\"rb1\" />\n\n<span id=\"rb2\">Two</span>\n<RadioButton aria-labelledby=\"rb2\" />\n\n<RadioButton aria-label=\"Three\" />\n"
 }
