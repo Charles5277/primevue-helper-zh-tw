@@ -1,9 +1,9 @@
 {
-  "name": "primevue-helper",
+  "name": "primevue-helper-zh-tw",
   "version": "1.0.3",
-  "displayName": "Primevue Helper",
+  "displayName": "Primevue Helper (ZH-TW)",
   "description": "support open API document and insert code snippet!",
-  "publisher": "QuickView",
+  "publisher": "devCharles5277",
   "engines": {
     "vscode": "^1.92.0"
   },
@@ -78,11 +78,11 @@
     "views": {
       "primevue-helper": [
         {
-					"type": "webview",
-					"id": "component-tree-webview",
+          "type": "webview",
+          "id": "component-tree-webview",
           "icon": "image/icon.svg",
-					"name": "Component Tree"
-				}
+          "name": "Component Tree"
+        }
       ]
     },
     "configuration": {
@@ -129,7 +129,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MMJG-Team/quick-view"
+    "url": "https://github.com/Charles5277/primevue-helper-zh-tw"
   },
   "vsce": {
     "dependencies": false,

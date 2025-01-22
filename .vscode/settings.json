@@ -12,6 +12,10 @@
 	"typescript.tsc.autoDetect": "off",
 	"cSpell.words": [
 		"apidoc",
+		"Inplace",
 		"primevue"
+	],
+	"i18n-ally.localesPaths": [
+		"ui-repos/primevue/apps/showcase/doc/configuration/locale"
 	]
 }
